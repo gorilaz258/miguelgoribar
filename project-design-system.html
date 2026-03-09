@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Atomic Design System — Miguel Goribar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#F7F5F2;
+--ink:#1A1917;
+--ink-soft:#6B6860;
+--accent:#C4A882;
+--border:#E4E1DC;
+--card:#FDFCFA;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+background:var(--bg);
+font-family:'DM Sans',sans-serif;
+color:var(--ink);
+line-height:1.6;
+}
+
+footer{
+padding:40px 60px;
+border-top:1px solid var(--border);
+font-size:.75rem;
+color:var(--ink-faint);
+text-align:center
+}
+
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:28px 60px;
+background:rgba(247,245,242,0.9);
+backdrop-filter:blur(10px);
+}
+
+nav a{
+text-decoration:none;
+color:var(--ink);
+}
+
+/* CONTENT */
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:all .8s ease;
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.fade-up{
+opacity:0;
+transform:translateY(20px);
+animation:fadeUp .8s ease forwards;
+}
+
+.fade-delay-1{animation-delay:.15s}
+.fade-delay-2{animation-delay:.3s}
+.fade-delay-3{animation-delay:.45s}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:140px 40px 80px;
+}
+
+h1{
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+font-weight:300;
+margin-bottom:20px;
+}
+
+.section{
+margin-top:60px;
+}
+
+.section h2{
+font-family:'Cormorant Garamond',serif;
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.section p{
+color:var(--ink-soft);
+max-width:650px;
+}
+
+.footer-linkedin{
+text-decoration:none;
+color:var(--ink-soft);
+font-size:.75rem;
+letter-spacing:.1em;
+}
+
+.footer-linkedin:hover{
+color:var(--ink);
+}
+
+
+/* IMAGE */
+
+.project-image{
+margin-top:30px;
+}
+
+.project-image img{
+width:100%;
+border-radius:6px;
+border:1px solid var(--border);
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+display:inline-block;
+margin-top:60px;
+padding:14px 34px;
+background:var(--ink);
+color:white;
+text-decoration:none;
+letter-spacing:.1em;
+font-size:.8rem;
+transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.back-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(0,0,0,0.12);
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><strong>MG</strong></div>
+<a href="index.html">Back to portfolio</a>
+</nav>
+
+<div class="container">
+
+<h1 class="fade-up">Atomic Design System</h1>
+
+<p class="fade-up fade-delay-1">
+This project focused on building a scalable design system using atomic design principles.
+</p>
+
+<div class="project-image fade-up fade-delay-2">
+<img src="images/design-system.jpg">
+</div>
+
+<div class="section reveal">
+<h2>Problem</h2>
+<p>
+Inconsistent UI components created visual fragmentation and slowed down the design process.
+</p>
+</div>
+
+<div class="section reveal">
+<h2>Process</h2>
+<p>
+Components were organized following atomic design methodology: atoms, molecules, and organisms.
+</p>
+</div>
+
+<div class="section reveal">
+<h2>Solution</h2>
+<p>
+A reusable component library was created to ensure consistency and improve design efficiency.
+</p>
+</div>
+
+<div class="section reaveal">
+<h2>Outcome</h2>
+<p>
+The design system allows faster interface creation while maintaining visual consistency across products.
+</p>
+</div>
+
+
+<a class="back-btn" href="index.html">Back to Portfolio</a>
+
+</div>
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+},{threshold:0.15});
+
+const elements=document.querySelectorAll(".reveal");
+
+elements.forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+<footer>
+
+© 2026 Miguel Goribar — UX/UI Designer
+
+<br><br>
+
+<a class="footer-linkedin"
+href="https://linkedin.com/in/miguel-goribar"
+target="_blank">
+LinkedIn
+</a>
+
+</footer>
+
+</body>
+</html>
