@@ -36,31 +36,68 @@ line-height:1.6;
 
 nav{
 position:fixed;
-top:0;
-left:0;
-right:0;
+top:28px;
+right:40px;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:28px 60px;
-background:rgba(247,245,242,0.92);
-backdrop-filter:blur(10px);
-z-index:100;
+justify-content:center;
+padding:10px 14px;
+background:rgba(255,255,255,0.62);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border:1px solid rgba(196,168,130,0.18);
+border-radius:999px;
+box-shadow:0 10px 30px rgba(0,0,0,0.04);
+z-index:1000;
 }
 
-.logo{font-weight:600;letter-spacing:.02em}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{text-decoration:none;color:var(--ink-soft);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0%;height:1px;background:var(--ink);transition:width .3s ease}
-.nav-links a:hover::after{width:100%}
+.logo{
+display:none;
+}
+
+.nav-links{
+display:flex;
+gap:10px;
+list-style:none;
+align-items:center;
+padding:0;
+margin:0;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--ink-soft);
+font-size:.72rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+padding:10px 16px;
+border-radius:999px;
+transition:
+background .25s ease,
+color .25s ease,
+transform .25s ease;
+}
+
+.nav-links a:hover{
+background:rgba(196,168,130,0.12);
+color:var(--ink);
+transform:translateY(-1px);
+}
 
 #hero{
 min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+align-items:center;
+gap:90px;
 padding:0 60px;
-max-width:1080px;
+max-width:1280px;
+margin:auto;
+position:relative;
+}
+
+.hero-content{
+max-width:680px;
 }
 
 .hero-tag,.section-label{
@@ -81,46 +118,52 @@ h1{font-size:clamp(3.4rem,8vw,6.4rem)}
 h2{font-size:clamp(2.4rem,4.4vw,3.8rem);margin-bottom:40px}
 h3{font-size:1.8rem;margin-bottom:12px}
 
-.hero-desc{
-margin-top:30px;
-max-width:650px;
-color:var(--ink-soft);
-font-size:1.04rem;
-}
-
-.hero-proof{
-display:flex;
-flex-wrap:wrap;
-gap:16px;
-margin-top:28px;
-}
-
-.metric{
-border:1px solid var(--border);
-background:var(--card-bg);
-padding:14px 18px;
-min-width:145px;
-}
-
-.metric strong{
-display:block;
+.hero-subtitle{
+margin-top:24px;
+max-width:760px;
+font-size:clamp(1.4rem,2.8vw,2.2rem);
+line-height:1.2;
 font-family:'Cormorant Garamond',serif;
-font-size:2rem;
-line-height:1;
-font-weight:600;
+font-weight:300;
 color:var(--ink);
 }
 
-.metric span{
-display:block;
-font-size:.7rem;
-letter-spacing:.1em;
-text-transform:uppercase;
+.hero-desc{
+margin-top:24px;
+max-width:540px;
 color:var(--ink-soft);
-margin-top:6px;
+font-size:1.05rem;
+line-height:1.8;
 }
 
 .hero-actions{display:flex;align-items:center;gap:24px;margin-top:38px;flex-wrap:wrap}
+.hero-visual{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-visual::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+background:radial-gradient(circle, rgba(196,168,130,0.24) 0%, rgba(196,168,130,0) 70%);
+filter:blur(10px);
+z-index:0;
+}
+
+.hero-visual img{
+position:relative;
+width:100%;
+max-width:520px;
+border-radius:18px;
+box-shadow:
+0 40px 80px rgba(0,0,0,0.12),
+0 0 0 1px rgba(255,255,255,0.5);
+z-index:1;
+}
 .hero-cta,.linkedin-btn{
 display:inline-block;
 text-decoration:none;
@@ -153,15 +196,90 @@ background:var(--card-bg);
 border:1px solid var(--border);
 text-decoration:none;
 color:inherit;
-transition:transform .35s ease, box-shadow .35s ease, border-color .25s ease;
+transition:
+transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .45s cubic-bezier(.22,1,.36,1),
+border-color .3s ease,
+background .3s ease;
 }
 
-.project-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,0.06);border-color:var(--accent)}
+.featured-project{
+grid-template-columns:360px 1fr 52px;
+gap:28px;
+padding:48px;
+background:
+  radial-gradient(circle at 18% 45%, rgba(196,168,130,0.18), transparent 32%),
+  linear-gradient(135deg, #FDFCFA 0%, #F8F2E8 100%);
+border:1px solid var(--accent);
+box-shadow:0 24px 70px rgba(26,25,23,0.08);
+border-radius:2px;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+
+.featured-project::before{
+content:"";
+position:absolute;
+inset:18px;
+border:1px solid rgba(196,168,130,0.28);
+pointer-events:none;
+}
+
+.featured-project img{
+width:100%;
+height:250px;
+object-fit:cover;
+object-position:center;
+border-radius:10px;
+box-shadow:
+  0 24px 60px rgba(0,0,0,0.12),
+  0 0 0 1px rgba(255,255,255,0.6);
+transform:translateX(12px);
+}
+
+.featured-project .project-title{
+font-size:2.35rem;
+max-width:720px;
+}
+
+.featured-project .project-desc{
+font-size:1.02rem;
+max-width:720px;
+}
+
+.featured-project .project-arrow{
+font-size:2rem;
+z-index:1;
+}
+
+.featured-project > *{
+position:relative;
+z-index:1;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+box-shadow:
+0 24px 50px rgba(26,25,23,0.10),
+0 0 0 1px rgba(196,168,130,0.18);
+border-color:rgba(196,168,130,0.45);
+}
 .project-card img{width:150px;height:96px;object-fit:cover;border-radius:4px;background:#eee}
 .project-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:10px;line-height:1.05}
 .project-desc{font-size:.95rem;color:var(--ink-soft);max-width:780px}
 .project-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.badge{border:1px solid var(--border);padding:5px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);background:var(--bg)}
+.badge{
+padding:7px 12px;
+font-size:.66rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--accent-dark);
+background:rgba(196,168,130,0.10);
+border:1px solid rgba(196,168,130,0.18);
+border-radius:999px;
+backdrop-filter:blur(10px);
+}
 .project-arrow{font-size:1.8rem;color:var(--accent-dark)}
 
 .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:start;max-width:1100px}
@@ -194,24 +312,65 @@ footer{padding:40px 60px;border-top:1px solid var(--border);font-size:.75rem;col
 .footer-linkedin{text-decoration:none;color:var(--ink-soft);font-size:.75rem;letter-spacing:.1em}
 .footer-linkedin:hover{color:var(--ink)}
 
-.hero-tag,h1,.hero-desc,.hero-proof,.hero-actions{opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards}
-h1{animation-delay:.12s}.hero-desc{animation-delay:.24s}.hero-proof{animation-delay:.36s}.hero-actions{animation-delay:.48s}
+.hero-content,.hero-visual{opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards}
+
+.hero-content{animation-delay:.12s}
+.hero-visual{animation-delay:.28s}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}.reveal.visible{opacity:1;transform:translateY(0)}
 
 @media(max-width:900px){
-nav{padding:20px}.nav-links{gap:18px}
+nav{
+right:20px;
+top:20px;
+padding:10px 14px;
+}
+
+.nav-links{
+gap:8px;
+}
+
 section{padding:80px 20px}#hero{padding:0 20px}
-.project-card{grid-template-columns:1fr}.project-card img{width:100%;height:190px}.project-arrow{display:none}
+.project-card{grid-template-columns:1fr}
+.project-card img{width:100%;height:190px}.project-arrow{display:none}
 .about-grid{grid-template-columns:1fr;gap:30px}
-.hero-proof{gap:10px}.metric{min-width:135px}
+.featured-project{
+grid-template-columns:1fr;
+gap:24px;
+padding:28px;
+}
+
+.featured-project::before{
+inset:12px;
+}
+
+.featured-project img{
+height:220px;
+transform:none;
+}
+#hero{
+grid-template-columns:1fr;
+gap:40px;
+padding-top:120px;
+padding-bottom:80px;
+}
+
+.hero-visual{
+order:-1;
+}
+
+.hero-visual img{
+max-width:100%;
+}
+
 }
 </style>
 </head>
 
 <body>
 <nav>
-<div class="logo">MG</div>
+
 <ul class="nav-links">
 <li><a href="#work">Work</a></li>
 <li><a href="#about">About</a></li>
@@ -220,20 +379,28 @@ section{padding:80px 20px}#hero{padding:0 20px}
 </nav>
 
 <section id="hero">
-<div class="hero-tag">UX/UI Designer · Research · Usability · Fintech</div>
-<h1>Miguel Goribar</h1>
-<p class="hero-desc">
-I design digital products that reduce confusion and help users make clear, confident decisions — especially in complex contexts like personal finance.
-</p>
-<div class="hero-proof" aria-label="Selected project metrics">
-<div class="metric"><strong>19</strong><span>Test users</span></div>
-<div class="metric"><strong>89%</strong><span>Comprehension</span></div>
-<div class="metric"><strong>84%</strong><span>Decision accuracy</span></div>
-</div>
-<div class="hero-actions">
-<a class="hero-cta" href="#work">View Case Studies</a>
-<a class="linkedin-btn" href="https://linkedin.com/in/miguel-goribar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-</div>
+  <div class="hero-content">
+    <div class="hero-tag">UX/UI Designer · Product Design · Fintech</div>
+
+    <h1>Miguel Goribar</h1>
+
+    <p class="hero-subtitle">
+      Designing clear digital experiences for complex products.
+    </p>
+
+    <p class="hero-desc">
+      I design research-driven interfaces that help users understand information, reduce confusion, and make confident decisions — especially in fintech and product environments.
+    </p>
+
+    <div class="hero-actions">
+      <a class="hero-cta" href="#work">View Case Studies</a>
+      <a class="linkedin-btn" href="https://linkedin.com/in/miguel-goribar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="images/fintech-project.png" alt="Fintech UI preview">
+  </div>
 </section>
 
 <section id="work">
@@ -242,7 +409,7 @@ I design digital products that reduce confusion and help users make clear, confi
 
 <div class="projects">
 
-<a class="project-card" href="https://www.behance.net/miguelgoribar" target="_blank" rel="noopener noreferrer">
+<a class="project-card featured-project" href="https://www.behance.net/gallery/248023713/Fintech-UX-Case-Study" target="_blank" rel="noopener noreferrer">
 <img src="images/fintech-project.png" alt="Fintech app case study preview" loading="lazy">
 <div>
 <div class="project-title">Fintech app for clearer spending decisions</div>
