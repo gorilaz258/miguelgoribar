@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Miguel Goribar — UX/UI Designer</title>
+<link rel="icon" type="image/png" href="images/Logo.png">
+
+<meta property="og:title" content="Miguel Goribar — UX/UI Designer" />
+<meta property="og:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta property="og:image" content="preview.png" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Miguel Goribar — UX/UI Designer" />
+<meta name="twitter:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta name="twitter:image" content="preview.png" />
+
 <meta name="description" content="Portfolio of Miguel Goribar, UX/UI Designer focused on research-driven design, usability testing, fintech, and decision-focused digital products.">
 <meta name="keywords" content="UX UI Designer, UX Research, Usability Testing, Figma, Maze, Fintech, Product Design, User-Centered Design, Design Systems">
 
@@ -320,6 +332,52 @@ footer{padding:40px 60px;border-top:1px solid var(--border);font-size:.75rem;col
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}.reveal.visible{opacity:1;transform:translateY(0)}
 
+.project-card img{
+transition:transform .55s cubic-bezier(.22,1,.36,1);
+}
+
+.project-card:hover img{
+transform:scale(1.025);
+}
+
+a:focus-visible{
+outline:2px solid var(--accent);
+outline-offset:4px;
+border-radius:999px;
+}
+
+body{
+animation:pageFadeIn .55s ease forwards;
+}
+
+@keyframes pageFadeIn{
+from{
+opacity:0;
+transform:translateY(8px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+body.page-exit{
+opacity:0;
+transform:translateY(8px);
+transition:
+opacity .28s ease,
+transform .28s ease;
+}
+
+
+@media (prefers-reduced-motion: reduce){
+*{
+animation:none!important;
+transition:none!important;
+scroll-behavior:auto!important;
+}
+}
+
 @media(max-width:900px){
 nav{
 right:20px;
@@ -409,7 +467,7 @@ max-width:100%;
 
 <div class="projects">
 
-<a class="project-card featured-project" href="https://www.behance.net/gallery/248023713/Fintech-UX-Case-Study" target="_blank" rel="noopener noreferrer">
+<a class="project-card featured-project" href="project-fintech.html" target="_blank" rel="noopener noreferrer">
 <img src="images/fintech-project.png" alt="Fintech app case study preview" loading="lazy">
 <div>
 <div class="project-title">Fintech app for clearer spending decisions</div>
@@ -532,6 +590,28 @@ el.classList.add("reveal")
 observer.observe(el)
 })
 })
+</script>
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  const href = link.getAttribute("href");
+
+  if(
+    href &&
+    !href.startsWith("#") &&
+    !href.startsWith("mailto:") &&
+    !href.startsWith("http") &&
+    link.target !== "_blank"
+  ){
+    link.addEventListener("click", function(e){
+      e.preventDefault();
+      document.body.classList.add("page-exit");
+
+      setTimeout(()=>{
+        window.location.href = href;
+      }, 280);
+    });
+  }
+});
 </script>
 </body>
 </html>

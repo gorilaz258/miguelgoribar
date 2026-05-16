@@ -3,80 +3,354 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wireframing Case Study — Miguel Goribar</title>
+<link rel="icon" type="image/png" href="images/Logo.png">
 
-<title>Wireframes & Prototyping — Miguel Goribar</title>
+<meta property="og:title" content="Miguel Goribar — UX/UI Designer" />
+<meta property="og:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta property="og:image" content="preview.png" />
+<meta property="og:type" content="website" />
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Miguel Goribar — UX/UI Designer" />
+<meta name="twitter:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta name="twitter:image" content="preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
 --bg:#F7F5F2;
 --ink:#1A1917;
 --ink-soft:#6B6860;
+--ink-faint:#B8B5AF;
 --accent:#C4A882;
+--accent-dark:#9E7E5C;
 --border:#E4E1DC;
---card:#FDFCFA;
+--card-bg:#FDFCFA;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 body{
 background:var(--bg);
-font-family:'DM Sans',sans-serif;
 color:var(--ink);
+font-family:'DM Sans',sans-serif;
 line-height:1.6;
 }
 
-footer{
-padding:40px 60px;
-border-top:1px solid var(--border);
-font-size:.75rem;
-color:var(--ink-faint);
-text-align:center
-}
-
-/* NAV */
-
 nav{
 position:fixed;
-top:0;
-left:0;
-right:0;
+top:28px;
+right:40px;
+padding:10px 14px;
+background:rgba(255,255,255,0.62);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border:1px solid rgba(196,168,130,0.18);
+border-radius:999px;
+box-shadow:0 10px 30px rgba(0,0,0,0.04);
+z-index:1000;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:28px 60px;
-background:rgba(247,245,242,0.9);
-backdrop-filter:blur(10px);
+gap:10px;
 }
 
 nav a{
 text-decoration:none;
+color:var(--ink-soft);
+font-size:.72rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+padding:10px 16px;
+border-radius:999px;
+line-height:1;
+}
+
+nav a:hover{
+background:rgba(196,168,130,0.12);
 color:var(--ink);
 }
 
-/* CONTENT */
+main{
+max-width:1280px;
+margin:auto;
+padding:0 60px 100px;
+}
 
-.fade-up{
+.hero{
+min-height:100vh;
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+align-items:center;
+gap:70px;
+}
+
+.hero-content{
+max-width:620px;
+}
+
+.label{
+font-size:.75rem;
+letter-spacing:.2em;
+text-transform:uppercase;
+color:var(--accent-dark);
+margin-bottom:20px;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+font-weight:300;
+line-height:1;
+}
+
+h1{
+font-size:clamp(3.4rem,7vw,5.8rem);
+max-width:620px;
+}
+
+h2{
+font-size:clamp(2.4rem,4.4vw,3.8rem);
+margin-bottom:40px;
+}
+
+h3{
+font-size:1.8rem;
+margin-bottom:12px;
+}
+
+.hero-subtitle{
+margin-top:24px;
+max-width:640px;
+font-size:clamp(1.4rem,2.8vw,2.2rem);
+line-height:1.2;
+font-family:'Cormorant Garamond',serif;
+font-weight:300;
+color:var(--ink);
+}
+
+.hero-desc{
+margin-top:24px;
+max-width:540px;
+color:var(--ink-soft);
+font-size:1.05rem;
+line-height:1.8;
+}
+
+.hero-visual{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-visual::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+background:radial-gradient(circle, rgba(196,168,130,0.24) 0%, rgba(196,168,130,0) 70%);
+filter:blur(10px);
+z-index:0;
+}
+
+.hero-visual img{
+position:relative;
+width:100%;
+max-width:680px;
+border-radius:18px;
+box-shadow:
+0 40px 80px rgba(0,0,0,0.12),
+0 0 0 1px rgba(255,255,255,0.5);
+z-index:1;
+}
+
+.meta-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-bottom:80px;
+}
+
+.meta-card{
+background:var(--card-bg);
+border:1px solid var(--border);
+padding:26px;
+}
+
+.meta-card span{
+display:block;
+font-size:.7rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:var(--accent-dark);
+margin-bottom:8px;
+}
+
+.meta-card strong{
+font-size:.95rem;
+font-weight:500;
+}
+
+section{
+padding:100px 0;
+}
+
+.case-section{
+border-top:1px solid var(--border);
+}
+
+.two-col{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:60px;
+align-items:start;
+}
+
+p{
+color:var(--ink-soft);
+max-width:760px;
+}
+
+ul{
+padding-left:18px;
+color:var(--ink-soft);
+}
+
+li+li{margin-top:12px}
+
+.image-block{
+margin-top:42px;
+display:flex;
+justify-content:center;
+}
+
+.image-block img{
+width:74%;
+max-width:860px;
+border-radius:18px;
+box-shadow:
+0 24px 70px rgba(0,0,0,.10),
+0 0 0 1px rgba(255,255,255,.5);
+display:block;
+}
+
+.image-block.wide img{
+width:86%;
+max-width:980px;
+}
+
+.insights-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-top:40px;
+}
+
+.insight-card{
+background:var(--card-bg);
+border:1px solid var(--border);
+padding:30px;
+border-radius:18px;
+box-shadow:0 18px 40px rgba(0,0,0,.05);
+}
+
+.insight-card span{
+display:block;
+font-size:.72rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--accent-dark);
+margin-bottom:18px;
+}
+
+.insight-card p{
+font-size:.95rem;
+}
+
+.outcome-card{
+background:
+radial-gradient(circle at 18% 45%, rgba(196,168,130,0.18), transparent 32%),
+linear-gradient(135deg, #FDFCFA 0%, #F8F2E8 100%);
+border:1px solid var(--accent);
+border-radius:2px;
+padding:70px;
+box-shadow:0 24px 70px rgba(26,25,23,0.08);
+position:relative;
+overflow:hidden;
+}
+
+.outcome-card::before{
+content:"";
+position:absolute;
+inset:18px;
+border:1px solid rgba(196,168,130,0.28);
+pointer-events:none;
+}
+
+.outcome-card > *{
+position:relative;
+z-index:1;
+}
+
+.final-cta{
+margin-top:90px;
+padding:80px;
+background:var(--card-bg);
+border:1px solid var(--border);
+text-align:center;
+box-shadow:0 24px 70px rgba(26,25,23,0.06);
+}
+
+.final-cta h2{
+max-width:760px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.final-cta p{
+margin:0 auto;
+}
+
+.cta-actions{
+display:flex;
+justify-content:center;
+gap:22px;
+margin-top:38px;
+flex-wrap:wrap;
+}
+
+.cta-actions a{
+display:inline-block;
+text-decoration:none;
+font-size:.8rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+border-bottom:1px solid var(--ink);
+padding-bottom:6px;
+color:var(--ink);
+transition:.25s;
+}
+
+.cta-actions a:hover{
+color:var(--accent-dark);
+border-color:var(--accent-dark);
+}
+
+.hero-content,.hero-visual{
 opacity:0;
 transform:translateY(20px);
 animation:fadeUp .8s ease forwards;
 }
 
-.fade-delay-1{animation-delay:.15s}
-.fade-delay-2{animation-delay:.3s}
-.fade-delay-3{animation-delay:.45s}
+.hero-content{animation-delay:.12s}
+.hero-visual{animation-delay:.28s}
 
 @keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
 }
 
 .reveal{
@@ -90,162 +364,346 @@ opacity:1;
 transform:translateY(0);
 }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:140px 40px 80px;
+.hero-visual img{
+transition:
+transform .6s cubic-bezier(.22,1,.36,1),
+box-shadow .6s cubic-bezier(.22,1,.36,1);
 }
 
-h1{
-font-family:'Cormorant Garamond',serif;
-font-size:3rem;
-font-weight:300;
-margin-bottom:20px;
+.hero-visual img:hover{
+transform:translateY(-6px) scale(1.015);
+box-shadow:
+0 46px 100px rgba(0,0,0,0.16),
+0 0 0 1px rgba(255,255,255,0.55);
 }
 
-.section{
-margin-top:60px;
+.meta-card,
+.insight-card,
+.prototype-card,
+.outcome-card,
+.final-cta{
+transition:
+transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .45s cubic-bezier(.22,1,.36,1),
+border-color .35s ease;
 }
 
-.section h2{
-font-family:'Cormorant Garamond',serif;
-font-size:2rem;
-margin-bottom:10px;
+.meta-card:hover,
+.insight-card:hover,
+.prototype-card:hover{
+transform:translateY(-6px);
+box-shadow:0 24px 60px rgba(26,25,23,.10);
+border-color:rgba(196,168,130,.45);
 }
 
-.section p{
-color:var(--ink-soft);
-max-width:650px;
+.image-block img{
+transition:
+transform .55s cubic-bezier(.22,1,.36,1),
+box-shadow .55s cubic-bezier(.22,1,.36,1);
 }
 
-.footer-linkedin{
-text-decoration:none;
-color:var(--ink-soft);
-font-size:.75rem;
-letter-spacing:.1em;
+.image-block img:hover{
+transform:translateY(-6px) scale(1.01);
+box-shadow:
+0 34px 90px rgba(0,0,0,.14),
+0 0 0 1px rgba(255,255,255,.55);
 }
 
-.footer-linkedin:hover{
-color:var(--ink);
+.cta-actions a,
+nav a{
+transition:
+background .25s ease,
+color .25s ease,
+border-color .25s ease,
+transform .25s ease;
 }
 
-
-/* IMAGE */
-
-.project-image{
-margin-top:30px;
+.cta-actions a:hover,
+nav a:hover{
+transform:translateY(-1px);
 }
 
-.project-image img{
+a:focus-visible{
+outline:2px solid var(--accent);
+outline-offset:4px;
+border-radius:999px;
+}
+
+body{
+animation:pageFadeIn .55s ease forwards;
+}
+
+@keyframes pageFadeIn{
+from{
+opacity:0;
+transform:translateY(8px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+body.page-exit{
+opacity:0;
+transform:translateY(8px);
+transition:
+opacity .28s ease,
+transform .28s ease;
+}
+
+@media (prefers-reduced-motion: reduce){
+*{
+animation:none!important;
+transition:none!important;
+scroll-behavior:auto!important;
+}
+}
+
+@media(max-width:900px){
+nav{
+right:20px;
+top:20px;
+padding:10px 14px;
+}
+
+main{
+padding:0 20px 80px;
+}
+
+.hero{
+grid-template-columns:1fr;
+gap:40px;
+padding-top:120px;
+padding-bottom:80px;
+}
+
+.hero-visual{
+order:-1;
+}
+
+.hero-visual img{
+max-width:100%;
+}
+
+.meta-grid,
+.two-col,
+.insights-grid{
+grid-template-columns:1fr;
+}
+
+section{
+padding:80px 0;
+}
+
+.image-block img,
+.image-block.wide img{
 width:100%;
-border-radius:6px;
-border:1px solid var(--border);
+max-width:100%;
 }
 
-/* BACK BUTTON */
-
-.back-btn{
-display:inline-block;
-margin-top:60px;
-padding:14px 34px;
-background:var(--ink);
-color:white;
-text-decoration:none;
-letter-spacing:.1em;
-font-size:.8rem;
-transition:transform .25s ease, box-shadow .25s ease;
+.outcome-card,
+.final-cta{
+padding:44px 24px;
 }
-
-.back-btn:hover{
-transform:translateY(-2px);
-box-shadow:0 8px 18px rgba(0,0,0,0.12);
 }
-
 </style>
 </head>
 
 <body>
 
 <nav>
-<div><strong>MG</strong></div>
-<a href="index.html">Back to portfolio</a>
+<a href="index.html#work">Work</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact</a>
 </nav>
 
-<div class="container">
+<main>
 
-<h1 class="fade-up">Wireframes & Prototyping</h1>
+<section class="hero">
+  <div class="hero-content">
+    <div class="label">Wireframing · Prototyping</div>
 
-<p class="fade-up fade-delay-1">
-This project focused on designing user flows and wireframes to improve the overall usability of a digital product.
-</p>
+    <h1>Designing clearer user flows</h1>
 
-<div class="project-image fade-up fade-delay-2"">
-<img src="images/wireframe-project.jpg">
-</div>
+    <p class="hero-subtitle">
+      Turning early ideas into structured, testable interface flows.
+    </p>
 
-<div class="section reveal">
-<h2>Problem</h2>
-<p>
-The existing interface lacked a clear navigation structure, making it difficult for users to complete key tasks efficiently.
-</p>
-</div>
+    <p class="hero-desc">
+      A wireframing and prototyping case study focused on improving navigation clarity, reducing friction, and shaping a more intuitive user journey before moving into final UI design.
+    </p>
+  </div>
 
-<div class="section reveal">
-<h2>Design Process</h2>
-<p>
-Created low-fidelity wireframes to explore layout solutions and interaction patterns. These were iterated into higher fidelity prototypes using Figma.
-</p>
-</div>
+  <div class="hero-visual">
+    <img src="images/Modal6.png" alt="Final booking flow prototype screen">
+  </div>
+</section>
 
-<div class="section reveal">
-<h2>Prototype</h2>
-<p>
-Interactive prototypes were developed to simulate user flows and test navigation clarity.
-</p>
-</div>
+<section class="meta-grid reveal">
+  <div class="meta-card"><span>Role</span><strong>UX/UI Designer</strong></div>
+  <div class="meta-card"><span>Focus</span><strong>User Flows</strong></div>
+  <div class="meta-card"><span>Method</span><strong>Wireframing · Prototyping</strong></div>
+  <div class="meta-card"><span>Tool</span><strong>Figma</strong></div>
+</section>
 
-<div class="section reveal">
-<h2>Outcome</h2>
-<p>
-The final wireframes improved task flow and reduced unnecessary steps in the user journey.
-</p>
-</div>
+<section class="case-section two-col reveal">
+  <div>
+    <div class="label">Problem</div>
+    <h2>The interface needed a clearer path for users</h2>
+  </div>
 
+  <div>
+    <p>
+      The experience lacked a clear navigation structure, making it harder for users to understand where to start, what to do next, and how to complete key tasks efficiently.
+    </p>
+  </div>
+</section>
 
-<a class="back-btn" href="index.html">Back to Portfolio</a>
+<section class="case-section reveal">
+  <div class="label">Early exploration</div>
+  <h2>Exploring layout and flow options before final UI</h2>
 
-</div>
+  <p>
+    Low-fidelity wireframes helped test structure, hierarchy, and navigation logic before investing time in visual details.
+  </p>
+
+  <div class="image-block wide">
+    <img src="images/wireframe-project.jpg" alt="Low fidelity wireframe exploration">
+  </div>
+</section>
+
+<section class="case-section two-col reveal">
+  <div>
+    <div class="label">Process</div>
+    <h2>From low fidelity structure to interactive prototype</h2>
+  </div>
+
+  <div>
+    <ul>
+      <li>Mapped the main user flow and identified key decision points.</li>
+      <li>Created low-fidelity wireframes to explore screen structure.</li>
+      <li>Refined hierarchy and navigation patterns based on clarity.</li>
+      <li>Built an interactive prototype to simulate the user journey.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-section reveal">
+  <div class="label">Prototype logic</div>
+  <h2>Designing interactions before visual polish</h2>
+
+  <div class="insights-grid">
+    <div class="insight-card">
+      <span>Step 01</span>
+      <h3>Structure</h3>
+      <p>Wireframes defined the main layout, content grouping, and user path before visual design.</p>
+    </div>
+
+    <div class="insight-card">
+      <span>Step 02</span>
+      <h3>Flow</h3>
+      <p>Interaction paths helped clarify how users would move between screens and complete tasks.</p>
+    </div>
+
+    <div class="insight-card">
+      <span>Step 03</span>
+      <h3>Validation</h3>
+      <p>The prototype made it possible to evaluate navigation clarity before final interface decisions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="case-section reveal">
+  <div class="label">Final direction</div>
+  <h2>A clearer foundation for interface design</h2>
+
+  <p>
+    The wireframes created a stronger foundation for the final interface by clarifying hierarchy, reducing unnecessary steps, and improving the overall task flow.
+  </p>
+
+  <div class="image-block">
+    <img src="images/Modal.png" alt="Wireframe final direction">
+  </div>
+</section>
+
+<section class="case-section two-col reveal">
+  <div>
+    <div class="label">Design opportunity</div>
+    <h2>Reduce friction before visual design begins</h2>
+  </div>
+
+  <div>
+    <ul>
+      <li>Clarify navigation before applying final UI styling.</li>
+      <li>Use wireframes to test information hierarchy early.</li>
+      <li>Prototype key user paths before committing to final screens.</li>
+      <li>Use interaction logic to identify potential usability issues sooner.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-section reveal">
+  <div class="outcome-card">
+    <div class="label">Outcome</div>
+    <h2>Wireframes turned uncertainty into structure</h2>
+    <p>
+      The project helped transform an unclear navigation experience into a more structured flow, making it easier to understand user paths and move toward a more confident final interface.
+    </p>
+  </div>
+</section>
+
+<section class="final-cta reveal">
+  <div class="label">Open to opportunities</div>
+  <h2>Interested in clear, structured product experiences?</h2>
+  <p>
+    I’m open to UX/UI opportunities focused on user flows, prototyping, usability, and clear digital experiences.
+  </p>
+
+  <div class="cta-actions">
+    <a href="mailto:gorilaz_258@hotmail.com">Contact me</a>
+    <a href="index.html">Back to portfolio</a>
+  </div>
+</section>
+
+</main>
+
 <script>
-
 const observer = new IntersectionObserver((entries)=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-});
-},{threshold:0.15});
+if(entry.isIntersecting){entry.target.classList.add("visible")}
+})
+},{threshold:0.15})
 
-const elements=document.querySelectorAll(".reveal");
-
-elements.forEach(el=>{
-observer.observe(el);
-});
-
+window.addEventListener("DOMContentLoaded",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el)
+})
+})
 </script>
 
-<footer>
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  const href = link.getAttribute("href");
 
-© 2026 Miguel Goribar — UX/UI Designer
+  if(
+    href &&
+    !href.startsWith("#") &&
+    !href.startsWith("mailto:") &&
+    !href.startsWith("http") &&
+    link.target !== "_blank"
+  ){
+    link.addEventListener("click", function(e){
+      e.preventDefault();
+      document.body.classList.add("page-exit");
 
-<br><br>
-
-<a class="footer-linkedin"
-href="https://linkedin.com/in/miguel-goribar"
-target="_blank">
-LinkedIn
-</a>
-
-</footer>
+      setTimeout(()=>{
+        window.location.href = href;
+      }, 280);
+    });
+  }
+});
+</script>
 
 </body>
 </html>

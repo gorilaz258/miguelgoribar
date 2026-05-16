@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fintech Case Study — Miguel Goribar</title>
+<link rel="icon" type="image/png" href="images/Logo.png">
+
+<meta property="og:title" content="Miguel Goribar — UX/UI Designer" />
+<meta property="og:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta property="og:image" content="preview.png" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Miguel Goribar — UX/UI Designer" />
+<meta name="twitter:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta name="twitter:image" content="preview.png" />
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+--bg:#F7F5F2;
+--ink:#1A1917;
+--ink-soft:#6B6860;
+--accent:#C4A882;
+--accent-dark:#9E7E5C;
+--border:#E4E1DC;
+--card-bg:#FDFCFA;
+}
+
+html{scroll-behavior:smooth}
+
+body{
+background:var(--bg);
+color:var(--ink);
+font-family:'DM Sans',sans-serif;
+line-height:1.7;
+}
+
+nav{
+position:fixed;
+top:28px;
+right:40px;
+padding:10px 14px;
+background:rgba(255,255,255,0.62);
+backdrop-filter:blur(18px);
+border:1px solid rgba(196,168,130,0.18);
+border-radius:999px;
+box-shadow:0 10px 30px rgba(0,0,0,0.04);
+z-index:1000;
+}
+
+nav a{
+text-decoration:none;
+color:var(--ink-soft);
+font-size:.72rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+padding:10px 16px;
+border-radius:999px;
+}
+
+nav a{
+transition:
+background .25s ease,
+color .25s ease,
+transform .25s ease;
+}
+
+nav a:hover{
+background:rgba(196,168,130,0.12);
+color:var(--ink);
+transform:translateY(-1px);
+}
+
+main{
+max-width:1180px;
+margin:auto;
+padding:140px 60px 100px;
+}
+
+.project-hero{
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:70px;
+align-items:center;
+min-height:78vh;
+}
+
+.label{
+font-size:.75rem;
+letter-spacing:.2em;
+text-transform:uppercase;
+color:var(--accent-dark);
+margin-bottom:22px;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+font-weight:300;
+line-height:1;
+}
+
+h1{
+font-size:clamp(3rem,7vw,6rem);
+margin-bottom:28px;
+}
+
+h2{
+font-size:clamp(2.2rem,4vw,3.4rem);
+margin-bottom:28px;
+}
+
+h3{
+font-size:1.7rem;
+margin-bottom:12px;
+}
+
+.lead{
+font-size:1.1rem;
+color:var(--ink-soft);
+max-width:620px;
+}
+
+.hero-img{
+width:100%;
+border-radius:24px;
+box-shadow:
+0 40px 100px rgba(0,0,0,.16),
+0 0 0 1px rgba(255,255,255,.45);
+transform:perspective(1200px) rotateY(-4deg) rotateX(1deg);
+transition:transform .6s ease;
+}
+
+.hero-img:hover{
+transform:perspective(1200px) rotateY(0deg) rotateX(0deg);
+}
+
+.meta-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin:70px 0;
+}
+
+.meta-card,.content-card{
+background:var(--card-bg);
+border:1px solid var(--border);
+padding:26px;
+}
+
+.meta-card span{
+display:block;
+font-size:.7rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:var(--accent-dark);
+margin-bottom:8px;
+}
+
+.meta-card strong{
+font-size:.95rem;
+font-weight:500;
+}
+
+.section{
+padding:70px 0;
+border-top:1px solid var(--border);
+}
+
+.two-col{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:60px;
+}
+
+p{
+color:var(--ink-soft);
+max-width:760px;
+}
+
+ul{
+padding-left:18px;
+color:var(--ink-soft);
+}
+
+li+li{margin-top:12px}
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:30px;
+}
+
+.metric{
+background:
+linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,255,255,.92));
+border:1px solid rgba(196,168,130,.18);
+padding:38px 34px;
+border-radius:18px;
+box-shadow:0 18px 40px rgba(0,0,0,.06);
+backdrop-filter:blur(12px);
+}
+
+.metric{
+transition:
+transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .45s cubic-bezier(.22,1,.36,1),
+border-color .35s ease;
+}
+
+.metric:hover{
+transform:translateY(-6px);
+box-shadow:0 24px 60px rgba(26,25,23,.10);
+border-color:rgba(196,168,130,.45);
+}
+
+.metric strong{
+margin-bottom:12px;
+display:block;
+font-family:'Cormorant Garamond',serif;
+font-size:3rem;
+line-height:1;
+color:var(--ink);
+}
+
+.metric span{
+font-size:.75rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--ink-soft);
+}
+
+.back-link{
+display:inline-block;
+margin-top:80px;
+color:var(--ink);
+text-decoration:none;
+border-bottom:1px solid var(--ink);
+font-size:.8rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+}
+
+.process-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+margin-top:34px;
+}
+
+.process-card{
+background:var(--card-bg);
+border:1px solid var(--border);
+padding:28px;
+border-radius:18px;
+box-shadow:0 18px 40px rgba(0,0,0,.05);
+}
+
+.process-card{
+transition:
+transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .45s cubic-bezier(.22,1,.36,1),
+border-color .35s ease;
+}
+
+.process-card:hover{
+transform:translateY(-6px);
+box-shadow:0 24px 60px rgba(26,25,23,.10);
+border-color:rgba(196,168,130,.45);
+}
+
+.process-card span{
+display:block;
+font-size:.72rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--accent-dark);
+margin-bottom:18px;
+}
+
+.process-card h3{
+font-size:1.55rem;
+}
+
+.process-card p{
+font-size:.92rem;
+}
+
+.highlights-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:28px;
+margin-top:42px;
+}
+
+.highlight-card{
+background:var(--card-bg);
+border:1px solid var(--border);
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,.06);
+transition:
+transform .45s ease,
+box-shadow .45s ease;
+}
+
+.highlight-card:hover{
+transform:translateY(-8px);
+box-shadow:0 30px 70px rgba(0,0,0,.10);
+}
+
+.highlight-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+display:block;
+}
+
+.highlight-content{
+padding:30px;
+}
+
+.highlight-content h3{
+margin-bottom:14px;
+}
+
+.highlight-content p{
+font-size:.95rem;
+}
+
+.quote-section{
+padding:120px 0;
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+max-width:980px;
+margin:auto;
+}
+
+.quote-line{
+width:80px;
+height:1px;
+background:var(--accent);
+margin-bottom:42px;
+opacity:.5;
+}
+
+blockquote{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(2.4rem,5vw,4.6rem);
+line-height:1.08;
+font-weight:300;
+max-width:900px;
+color:var(--ink);
+letter-spacing:-.02em;
+}
+
+.quote-caption{
+margin-top:34px;
+font-size:.78rem;
+letter-spacing:.18em;
+text-transform:uppercase;
+color:var(--ink-soft);
+}
+
+.evolution-grid{
+display:grid;
+grid-template-columns:1fr 80px 1fr;
+gap:24px;
+align-items:center;
+margin-top:50px;
+}
+
+.evolution-card{
+background:var(--card-bg);
+border:1px solid var(--border);
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,.06);
+}
+
+.evolution-card{
+transition:
+transform .45s cubic-bezier(.22,1,.36,1),
+box-shadow .45s cubic-bezier(.22,1,.36,1),
+border-color .35s ease;
+}
+
+.evolution-card:hover{
+transform:translateY(-6px);
+box-shadow:0 24px 60px rgba(26,25,23,.10);
+border-color:rgba(196,168,130,.45);
+}
+
+.evolution-card img{
+width:100%;
+height:340px;
+object-fit:cover;
+display:block;
+}
+
+.evolution-content{
+padding:30px;
+}
+
+.evolution-content span{
+display:block;
+font-size:.72rem;
+letter-spacing:.16em;
+text-transform:uppercase;
+color:var(--accent-dark);
+margin-bottom:16px;
+}
+
+.evolution-content p{
+font-size:.95rem;
+}
+
+.evolution-arrow{
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:2.5rem;
+color:var(--accent-dark);
+opacity:.6;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+section{
+opacity:0;
+transform:translateY(20px);
+animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.final-cta{
+margin-top:90px;
+padding:80px;
+background:linear-gradient(135deg, #FDFCFA, #F8F2E8);
+border:1px solid var(--border);
+border-radius:28px;
+text-align:center;
+box-shadow:0 24px 70px rgba(0,0,0,.08);
+}
+
+.final-cta h2{
+max-width:760px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.final-cta p{
+margin:0 auto;
+}
+
+.cta-actions{
+display:flex;
+justify-content:center;
+gap:22px;
+margin-top:38px;
+flex-wrap:wrap;
+}
+
+.cta-actions a{
+text-decoration:none;
+color:var(--ink);
+font-size:.78rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+border-bottom:1px solid var(--ink);
+padding-bottom:6px;
+}
+
+.cta-actions a:hover{
+color:var(--accent-dark);
+border-color:var(--accent-dark);
+}
+
+a:focus-visible{
+outline:2px solid var(--accent);
+outline-offset:4px;
+border-radius:999px;
+}
+
+body{
+animation:pageFadeIn .55s ease forwards;
+}
+
+@keyframes pageFadeIn{
+from{
+opacity:0;
+transform:translateY(8px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+body.page-exit{
+opacity:0;
+transform:translateY(8px);
+transition:
+opacity .28s ease,
+transform .28s ease;
+}
+
+
+@media (prefers-reduced-motion: reduce){
+*{
+animation:none!important;
+transition:none!important;
+scroll-behavior:auto!important;
+}
+}
+
+@media(max-width:900px){
+nav{right:20px;top:20px}
+main{padding:120px 20px 80px}
+.project-hero,.two-col,.meta-grid,.metrics{
+grid-template-columns:1fr;
+}
+
+.process-grid{
+grid-template-columns:1fr;
+}
+.highlights-grid{
+grid-template-columns:1fr;
+}
+.evolution-grid{
+grid-template-columns:1fr;
+}
+
+.evolution-arrow{
+transform:rotate(90deg);
+padding:10px 0;
+}
+.final-cta{
+padding:44px 24px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#work">Work</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
+<main>
+
+<section class="project-hero">
+<div>
+<div class="label">Fintech · UX/UI Case Study</div>
+<h1>Fintech app for clearer spending decisions</h1>
+<p class="lead">
+A mobile finance experience designed to help users understand what money is truly available to spend, instead of relying only on their visible bank balance.
+</p>
+</div>
+
+<img class="hero-img" src="images/fintech-project.png" alt="Fintech app screens">
+</section>
+
+<section class="meta-grid">
+<div class="meta-card"><span>Role</span><strong>UX/UI Designer</strong></div>
+<div class="meta-card"><span>Focus</span><strong>Fintech Mobile App</strong></div>
+<div class="meta-card"><span>Tools</span><strong>Figma · Maze</strong></div>
+<div class="meta-card"><span>Year</span><strong>2026</strong></div>
+</section>
+
+<section class="section two-col">
+<div>
+<div class="label">Context</div>
+<h2>Helping users make sense of their money</h2>
+</div>
+<div>
+<p>
+The product was designed for people with variable income who need a simpler way to understand their financial situation. The main challenge was not just showing a balance, but helping users understand whether that money was actually safe to spend.
+</p>
+</div>
+</section>
+
+<section class="section two-col">
+<div>
+<div class="label">Problem</div>
+<h2>The balance was visible, but the decision was unclear</h2>
+</div>
+<div>
+<p>
+Users could see how much money they had, but they still struggled to understand what amount was available after considering upcoming expenses, financial commitments, and spending patterns.
+</p>
+</div>
+</section>
+
+<section class="quote-section">
+  <div class="quote-line"></div>
+
+  <blockquote>
+    “I can see my balance, but I still don’t know if I can actually spend that money.”
+  </blockquote>
+
+  <p class="quote-caption">
+    One of the main insights identified during the research process.
+  </p>
+</section>
+
+<section class="section two-col">
+<div>
+<div class="label">My contribution</div>
+<h2>From research to interface</h2>
+</div>
+<div>
+<ul>
+<li>Defined user needs through research and usability observations.</li>
+<li>Created user flows, wireframes, and interface explorations in Figma.</li>
+<li>Designed a clearer financial visualization focused on fast comprehension.</li>
+<li>Tested the prototype with Maze and used findings to iterate the experience.</li>
+</ul>
+</div>
+</section>
+
+<section class="section process-section">
+  <div class="label">Process</div>
+  <h2>How I moved from insight to product decisions</h2>
+
+  <div class="process-grid">
+    <div class="process-card">
+      <span>01</span>
+      <h3>Understand</h3>
+      <p>Identified the main confusion users had when interpreting their available balance and financial commitments.</p>
+    </div>
+
+    <div class="process-card">
+      <span>02</span>
+      <h3>Simplify</h3>
+      <p>Reduced financial complexity by prioritizing the most important information users needed to make a quick decision.</p>
+    </div>
+
+    <div class="process-card">
+      <span>03</span>
+      <h3>Prototype</h3>
+      <p>Created wireframes and high-fidelity screens in Figma to test different ways of showing spending clarity.</p>
+    </div>
+
+    <div class="process-card">
+      <span>04</span>
+      <h3>Validate</h3>
+      <p>Used usability testing to understand whether users could interpret the interface and make better spending decisions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section evolution-section">
+
+  <div class="label">Evolution</div>
+  <h2>From early exploration to final interface</h2>
+
+  <div class="evolution-grid">
+
+    <div class="evolution-card">
+      <img src="images/research-board.png" alt="Research insights board">
+
+      <div class="evolution-content">
+        <span>Research synthesis</span>
+        <p>
+          Research findings helped identify confusion patterns around available balance, spending confidence, and financial clarity.
+</p>
+      </div>
+    </div>
+
+    <div class="evolution-arrow">→</div>
+
+    <div class="evolution-card">
+      <img src="images/fintech-project.png" alt="Final fintech interface">
+
+      <div class="evolution-content">
+        <span>Final interface</span>
+        <p>
+          The final experience simplified financial visibility and prioritized quick decision-making through clearer UI structure.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section two-col">
+<div>
+<div class="label">Key decisions</div>
+<h2>Design decisions focused on clarity</h2>
+</div>
+<div>
+<ul>
+<li>Prioritized “safe to spend” clarity over complex financial dashboards.</li>
+<li>Reduced technical financial language to make the interface easier to understand.</li>
+<li>Used visual hierarchy to help users identify the most important number quickly.</li>
+<li>Kept the experience mobile-first and focused on quick decision-making.</li>
+</ul>
+</div>
+</section>
+
+<section class="section">
+  <div class="label">Design highlights</div>
+  <h2>Interface decisions that improved clarity</h2>
+
+  <div class="highlights-grid">
+
+    <div class="highlight-card">
+      <img src="images/fintech-project.png" alt="Financial clarity UI">
+      <div class="highlight-content">
+        <h3>Clear spending visibility</h3>
+        <p>
+          The interface prioritizes what users can safely spend today instead of only showing the current balance.
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight-card">
+      <img src="images/ui-kit-board.png" alt="Design system components">
+      <div class="highlight-content">
+        <h3>Consistent visual system</h3>
+        <p>
+          Reusable components and spacing rules were used to create a more scalable and predictable experience.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+<div class="label">Results</div>
+<h2>Usability testing helped validate the direction</h2>
+
+<div class="metrics">
+<div class="metric"><strong>19</strong><span>Test users</span></div>
+<div class="metric"><strong>89%</strong><span>Comprehension</span></div>
+<div class="metric"><strong>84%</strong><span>Decision accuracy</span></div>
+</div>
+</section>
+
+<section class="section two-col">
+
+<div>
+<div class="label">Outcome</div>
+<h2>What this project demonstrated</h2>
+</div>
+
+<div>
+<p>
+This project demonstrated how simplifying financial information can improve user confidence and reduce hesitation during spending decisions.
+</p>
+
+<br>
+
+<p>
+The final experience combined research insights, interface clarity, and usability validation to create a more understandable and approachable fintech experience for users with variable income.
+</p>
+
+</div>
+
+</section>
+
+<section class="section two-col">
+<div>
+<div class="label">Next steps</div>
+<h2>What I would improve next</h2>
+</div>
+<div>
+<ul>
+<li>Improve onboarding to explain financial concepts even faster.</li>
+<li>Validate savings behavior over a longer period of use.</li>
+<li>Explore automatic expense categorization and clearer monthly insights.</li>
+</ul>
+</div>
+</section>
+
+<section class="final-cta">
+  <div class="label">Open to opportunities</div>
+  <h2>Interested in working on clear, useful digital products?</h2>
+  <p>
+    I’m open to UX/UI design opportunities focused on product design, usability, fintech, and research-driven digital experiences.
+  </p>
+
+  <div class="cta-actions">
+    <a href="mailto:gorilaz_258@hotmail.com">Contact me</a>
+    <a href="index.html">Back to portfolio</a>
+  </div>
+</section>
+
+</main>
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  const href = link.getAttribute("href");
+
+  if(
+    href &&
+    !href.startsWith("#") &&
+    !href.startsWith("mailto:") &&
+    !href.startsWith("http") &&
+    link.target !== "_blank"
+  ){
+    link.addEventListener("click", function(e){
+      e.preventDefault();
+      document.body.classList.add("page-exit");
+
+      setTimeout(()=>{
+        window.location.href = href;
+      }, 280);
+    });
+  }
+});
+</script>
+</body>
+</html>
