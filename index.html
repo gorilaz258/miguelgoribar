@@ -60,7 +60,15 @@ backdrop-filter:blur(18px);
 border:1px solid rgba(196,168,130,0.18);
 border-radius:999px;
 box-shadow:0 10px 30px rgba(0,0,0,0.04);
-z-index:1000;
+z-index:9999;
+transition:
+background .3s ease,
+box-shadow .3s ease,
+transform .3s ease;
+}
+
+nav:hover{
+box-shadow:0 14px 40px rgba(0,0,0,0.06);
 }
 
 .logo{
@@ -88,6 +96,12 @@ transition:
 background .25s ease,
 color .25s ease,
 transform .25s ease;
+}
+
+.nav-links a.active,
+nav a.active{
+background:rgba(196,168,130,0.14);
+color:var(--ink);
 }
 
 .nav-links a:hover{
@@ -200,14 +214,17 @@ gap:30px;
 
 .project-card{
 display:grid;
-grid-template-columns:150px 1fr auto;
-gap:32px;
+grid-template-columns:320px 1fr 52px;
+gap:72px;
 align-items:center;
-padding:32px;
+padding:42px 48px;
 background:var(--card-bg);
 border:1px solid var(--border);
 text-decoration:none;
 color:inherit;
+position:relative;
+overflow:hidden;
+min-height:230px;
 transition:
 transform .45s cubic-bezier(.22,1,.36,1),
 box-shadow .45s cubic-bezier(.22,1,.36,1),
@@ -215,72 +232,54 @@ border-color .3s ease,
 background .3s ease;
 }
 
-.featured-project{
-grid-template-columns:360px 1fr 52px;
-gap:28px;
-padding:48px;
-background:
-  radial-gradient(circle at 18% 45%, rgba(196,168,130,0.18), transparent 32%),
-  linear-gradient(135deg, #FDFCFA 0%, #F8F2E8 100%);
-border:1px solid var(--accent);
-box-shadow:0 24px 70px rgba(26,25,23,0.08);
-border-radius:2px;
-align-items:center;
-position:relative;
-overflow:hidden;
-}
-
-.featured-project::before{
+.project-card::before{
 content:"";
 position:absolute;
 inset:18px;
-border:1px solid rgba(196,168,130,0.28);
+border:1px solid rgba(196,168,130,0.18);
 pointer-events:none;
+opacity:.65;
 }
 
-.featured-project img{
-width:100%;
-height:250px;
-object-fit:cover;
-object-position:center;
-border-radius:10px;
-box-shadow:
-  0 24px 60px rgba(0,0,0,0.12),
-  0 0 0 1px rgba(255,255,255,0.6);
-transform:translateX(12px);
-}
-
-.featured-project .project-title{
-font-size:2.35rem;
-max-width:720px;
-}
-
-.featured-project .project-desc{
-font-size:1.02rem;
-max-width:720px;
-}
-
-.featured-project .project-arrow{
-font-size:2rem;
-z-index:1;
-}
-
-.featured-project > *{
+.project-card > *{
 position:relative;
 z-index:1;
 }
 
-.project-card:hover{
-transform:translateY(-8px);
+.project-card img{
+width:100%;
+height:170px;
+object-fit:cover;
+object-position:center;
+border-radius:10px;
+background:#eee;
 box-shadow:
-0 24px 50px rgba(26,25,23,0.10),
-0 0 0 1px rgba(196,168,130,0.18);
-border-color:rgba(196,168,130,0.45);
+0 20px 50px rgba(0,0,0,0.10),
+0 0 0 1px rgba(255,255,255,0.55);
+transition:transform .55s cubic-bezier(.22,1,.36,1);
 }
-.project-card img{width:150px;height:96px;object-fit:cover;border-radius:4px;background:#eee}
-.project-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:10px;line-height:1.05}
-.project-desc{font-size:.95rem;color:var(--ink-soft);max-width:780px}
-.project-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+
+.project-title{
+font-family:'Cormorant Garamond',serif;
+font-size:2.15rem;
+margin-bottom:12px;
+line-height:1.05;
+}
+
+.project-desc{
+font-size:1rem;
+color:var(--ink-soft);
+max-width:780px;
+line-height:1.7;
+}
+
+.project-meta{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:18px;
+}
+
 .badge{
 padding:7px 12px;
 font-size:.66rem;
@@ -290,13 +289,67 @@ color:var(--accent-dark);
 background:rgba(196,168,130,0.10);
 border:1px solid rgba(196,168,130,0.18);
 border-radius:999px;
-backdrop-filter:blur(10px);
 }
-.project-arrow{font-size:1.8rem;color:var(--accent-dark)}
 
-.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:start;max-width:1100px}
-.about-copy{max-width:720px;color:var(--ink-soft);font-size:1rem}
-.about-copy p+p{margin-top:18px}
+.project-arrow{
+font-size:2rem;
+color:var(--accent-dark);
+justify-self:end;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+box-shadow:
+0 24px 50px rgba(26,25,23,0.10),
+0 0 0 1px rgba(196,168,130,0.18);
+border-color:rgba(196,168,130,0.45);
+}
+
+.project-card:hover img{
+transform:scale(1.025);
+}
+
+/* Main featured project */
+.featured-project{
+grid-template-columns:320px 1fr 52px;
+gap:72px;
+padding:42px 48px;
+background:
+radial-gradient(circle at 18% 45%, rgba(196,168,130,0.18), transparent 32%),
+linear-gradient(135deg, #FDFCFA 0%, #F8F2E8 100%);
+border:1px solid var(--accent);
+box-shadow:0 24px 70px rgba(26,25,23,0.08);
+}
+
+.featured-project::before{
+border-color:rgba(196,168,130,0.30);
+}
+
+.featured-project img{
+height:190px;
+}
+
+.featured-project .project-title{
+font-size:2.35rem;
+}
+
+.featured-project .project-desc{
+font-size:1.02rem;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:120px;
+align-items:start;
+max-width:1200px;
+}
+
+.about-copy{
+max-width:720px;
+color:var(--ink-soft);
+font-size:1rem;
+}
 
 .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .skill{border:1px solid var(--border);padding:7px 12px;font-size:.75rem;background:var(--card-bg)}
@@ -305,7 +358,17 @@ backdrop-filter:blur(10px);
 .value-card ul{padding-left:18px;color:var(--ink-soft);font-size:.92rem}
 .value-card li+li{margin-top:10px}
 
-#contact{text-align:center;padding-bottom:120px}
+#contact{
+text-align:center;
+padding:120px 60px 140px;
+border-top:1px solid var(--border);
+}
+
+#contact h2{
+max-width:900px;
+margin:0 auto 28px;
+}
+
 .contact-btn{
 display:inline-block;
 margin-top:40px;
@@ -315,10 +378,25 @@ color:white;
 text-decoration:none;
 letter-spacing:.12em;
 font-size:.8rem;
+text-transform:uppercase;
 transition:.25s;
 }
-.contact-btn:hover{background:var(--accent-dark)}
-.contact-linkedin{display:inline-block;margin-top:18px;text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark);border-bottom:1px solid var(--accent-dark);padding-bottom:6px}
+
+.contact-btn:hover{
+background:var(--accent-dark);
+}
+
+.contact-linkedin{
+display:inline-block;
+margin-top:18px;
+text-decoration:none;
+font-size:.8rem;
+letter-spacing:.12em;
+text-transform:uppercase;
+color:var(--accent-dark);
+border-bottom:1px solid var(--accent-dark);
+padding-bottom:6px;
+}
 
 footer{padding:40px 60px;border-top:1px solid var(--border);font-size:.75rem;color:var(--ink-faint);text-align:center}
 .footer-linkedin{text-decoration:none;color:var(--ink-soft);font-size:.75rem;letter-spacing:.1em}
@@ -353,20 +431,15 @@ animation:pageFadeIn .55s ease forwards;
 @keyframes pageFadeIn{
 from{
 opacity:0;
-transform:translateY(8px);
 }
 to{
 opacity:1;
-transform:translateY(0);
 }
 }
 
 body.page-exit{
 opacity:0;
-transform:translateY(8px);
-transition:
-opacity .28s ease,
-transform .28s ease;
+transition:opacity .28s ease;
 }
 
 
@@ -390,22 +463,31 @@ gap:8px;
 }
 
 section{padding:80px 20px}#hero{padding:0 20px}
-.project-card{grid-template-columns:1fr}
-.project-card img{width:100%;height:190px}.project-arrow{display:none}
-.about-grid{grid-template-columns:1fr;gap:30px}
+.project-card,
 .featured-project{
 grid-template-columns:1fr;
-gap:24px;
 padding:28px;
+gap:24px;
 }
 
+.project-card::before,
 .featured-project::before{
 inset:12px;
 }
 
+.project-card img,
 .featured-project img{
+width:100%;
 height:220px;
 transform:none;
+}
+
+.project-arrow{
+display:none;
+}
+
+.featured-project::before{
+inset:12px;
 }
 #hero{
 grid-template-columns:1fr;
@@ -467,7 +549,7 @@ max-width:100%;
 
 <div class="projects">
 
-<a class="project-card featured-project" href="project-fintech.html" target="_blank" rel="noopener noreferrer">
+<a class="project-card featured-project" href="project-fintech.html">
 <img src="images/fintech-project.png" alt="Fintech app case study preview" loading="lazy">
 <div>
 <div class="project-title">Fintech app for clearer spending decisions</div>
@@ -611,6 +693,30 @@ document.querySelectorAll("a").forEach(link=>{
       }, 280);
     });
   }
+});
+</script>
+<script>
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+
+    if(scrollY >= sectionTop){
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if(link.getAttribute("href") === `#${current}`){
+      link.classList.add("active");
+    }
+  });
 });
 </script>
 </body>
