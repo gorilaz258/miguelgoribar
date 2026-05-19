@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System Case Study — Miguel Goribar</title>
+<link rel="icon" type="image/png" href="images/Logo.png">
+
+<meta property="og:title" content="Miguel Goribar — UX/UI Designer" />
+<meta property="og:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta property="og:image" content="preview.png" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Miguel Goribar — UX/UI Designer" />
+<meta name="twitter:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
+<meta name="twitter:image" content="preview.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body class="case-page">
+
+<nav>
+<a href="index.html#work">Work</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="label">Design System · Atomic Design</div>
+
+    <h1>Scalable UI component system</h1>
+
+    <p class="hero-subtitle">
+      Building consistency, reusable components, and clearer interface structure.
+    </p>
+
+    <p class="hero-desc">
+      A design system case study focused on organizing UI elements through Atomic Design principles to improve consistency, reusability, and design efficiency.
+    </p>
+  </div>
+
+  <div class="hero-visual">
+    <img src="images/design-system.webp" alt="Design system board preview">
+  </div>
+</section>
+
+<section class="meta-grid reveal">
+  <div class="meta-card"><span>Role</span><strong>UX/UI Designer</strong></div>
+  <div class="meta-card"><span>Focus</span><strong>Design Systems</strong></div>
+  <div class="meta-card"><span>Method</span><strong>Atomic Design</strong></div>
+  <div class="meta-card"><span>Tool</span><strong>Figma</strong></div>
+</section>
+
+<section class="case-section two-col reveal">
+  <div>
+    <div class="label">Problem</div>
+    <h2>Inconsistent UI patterns slowed down the design process</h2>
+  </div>
+
+  <div>
+    <p>
+      Without reusable components and shared rules, interfaces can become inconsistent across screens. This makes it harder to scale a product, document behavior, and collaborate with technical teams.
+    </p>
+  </div>
+</section>
+
+<section class="case-section reveal">
+
+ <div class="label">Interaction patterns</div>
+
+<h2>Designing guided user interactions through progressive states</h2>
+
+  <p>
+    The interface was designed to guide users step by step while booking an appointment.
+    Each screen introduces a clearer level of interaction, helping users understand available options,
+    confirm selections, and reduce uncertainty during the process.
+  </p>
+
+  <div class="prototype-grid">
+
+    <div class="prototype-card">
+      <img src="images/Modal3.png" alt="Initial booking state">
+
+      <div class="prototype-info">
+        <span>Step 01</span>
+        <h3>Initial selection</h3>
+
+        <p>
+          Users begin by selecting the office location and opening the procedure selection menu before choosing an available schedule.
+        </p>
+      </div>
+    </div>
+
+    <div class="prototype-card">
+      <img src="images/Modal4.png" alt="Dropdown interaction state">
+
+      <div class="prototype-info">
+        <span>Step 02</span>
+        <h3>Dropdown interaction</h3>
+
+        <p>
+          Expanded dropdown states help users visualize available procedures without leaving the current screen or losing context.
+        </p>
+      </div>
+    </div>
+
+    <div class="prototype-card">
+      <img src="images/Modal5.png" alt="Confirmation state">
+
+      <div class="prototype-info">
+        <span>Step 03</span>
+        <h3>Confirmation state</h3>
+
+        <p>
+          Once the appointment is selected, the interface summarizes the booking details before the final confirmation action.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="case-section two-col reveal">
+  <div>
+    <div class="label">Approach</div>
+    <h2>Organizing components from simple to complex</h2>
+  </div>
+
+  <div>
+    <p>
+      I used Atomic Design principles to organize the system from foundational elements into larger reusable interface patterns.
+    </p>
+    <br>
+    <ul>
+      <li><strong>Atoms:</strong> colors, typography, icons, buttons, inputs.</li>
+      <li><strong>Molecules:</strong> cards, form groups, input combinations.</li>
+      <li><strong>Organisms:</strong> reusable UI sections and screen-level patterns.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-section reveal">
+  <div class="label">Component logic</div>
+  <h2>Reusable components with clear states</h2>
+
+  <div class="insights-grid">
+    <div class="insight-card">
+      <span>State 01</span>
+      <h3>Default</h3>
+      <p>The base state communicates the normal appearance and expected behavior of each component.</p>
+    </div>
+
+    <div class="insight-card">
+      <span>State 02</span>
+      <h3>Hover</h3>
+      <p>Interactive feedback helps users understand when an element is clickable or ready for action.</p>
+    </div>
+
+    <div class="insight-card">
+      <span>State 03</span>
+      <h3>Disabled</h3>
+      <p>Disabled states prevent confusion by communicating when an action is not currently available.</p>
+    </div>
+  </div>
+</section>
+
+<section class="case-section two-col reveal">
+  <div>
+    <div class="label">Design opportunity</div>
+    <h2>Build faster without losing consistency</h2>
+  </div>
+
+  <div>
+    <ul>
+      <li>Create reusable components instead of redesigning patterns from scratch.</li>
+      <li>Document component behavior to improve collaboration with developers.</li>
+      <li>Use consistent spacing, typography, and states across interfaces.</li>
+      <li>Make the system easier to expand as the product grows.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-section reveal">
+  <div class="outcome-card">
+    <div class="label">Outcome</div>
+    <h2>A stronger foundation for scalable interface design</h2>
+    <p>
+      The design system created a clearer structure for building consistent interfaces. It helped organize visual decisions, reduce repetitive work, and support a more scalable design workflow.
+    </p>
+  </div>
+</section>
+
+<section class="final-cta reveal">
+  <div class="label">Open to opportunities</div>
+  <h2>Interested in scalable, consistent product design?</h2>
+  <p>
+    I’m open to UX/UI opportunities focused on design systems, product design, usability, and clear digital experiences.
+  </p>
+
+  <div class="cta-actions">
+    <a href="mailto:gorilaz_258@hotmail.com">Contact me</a>
+    <a href="index.html">Back to portfolio</a>
+  </div>
+</section>
+
+</main>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add("visible")}
+})
+},{threshold:0.15})
+
+window.addEventListener("DOMContentLoaded",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el)
+})
+})
+</script>
+<script>
+document.querySelectorAll("a").forEach(link=>{
+  const href = link.getAttribute("href");
+
+  if(
+    href &&
+    !href.startsWith("#") &&
+    !href.startsWith("mailto:") &&
+    !href.startsWith("http") &&
+    link.target !== "_blank"
+  ){
+    link.addEventListener("click", function(e){
+      e.preventDefault();
+      document.body.classList.add("page-exit");
+
+      setTimeout(()=>{
+        window.location.href = href;
+      }, 280);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
