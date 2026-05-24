@@ -19,493 +19,18 @@
 <meta name="description" content="Portfolio of Miguel Goribar, UX/UI Designer focused on research-driven design, usability testing, fintech, and decision-focused digital products.">
 <meta name="keywords" content="UX UI Designer, UX Research, Usability Testing, Figma, Maze, Fintech, Product Design, User-Centered Design, Design Systems">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
-:root{
---bg:#F7F5F2;
---ink:#1A1917;
---ink-soft:#6B6860;
---ink-faint:#B8B5AF;
---accent:#C4A882;
---accent-dark:#9E7E5C;
---white:#FFFFFF;
---border:#E4E1DC;
---card-bg:#FDFCFA;
---success:#2F8F6B;
-}
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+rel="stylesheet">
 
-html{scroll-behavior:smooth}
+<link rel="stylesheet" href="css/style.css">
 
-body{
-background:var(--bg);
-color:var(--ink);
-font-family:'DM Sans',sans-serif;
-line-height:1.6;
-}
-
-nav{
-position:fixed;
-top:28px;
-right:40px;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:10px 14px;
-background:rgba(255,255,255,0.62);
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-border:1px solid rgba(196,168,130,0.18);
-border-radius:999px;
-box-shadow:0 10px 30px rgba(0,0,0,0.04);
-z-index:9999;
-transition:
-background .3s ease,
-box-shadow .3s ease,
-transform .3s ease;
-}
-
-nav:hover{
-box-shadow:0 14px 40px rgba(0,0,0,0.06);
-}
-
-.logo{
-display:none;
-}
-
-.nav-links{
-display:flex;
-gap:10px;
-list-style:none;
-align-items:center;
-padding:0;
-margin:0;
-}
-
-.nav-links a{
-text-decoration:none;
-color:var(--ink-soft);
-font-size:.72rem;
-letter-spacing:.14em;
-text-transform:uppercase;
-padding:10px 16px;
-border-radius:999px;
-transition:
-background .25s ease,
-color .25s ease,
-transform .25s ease;
-}
-
-.nav-links a.active,
-nav a.active{
-background:rgba(196,168,130,0.14);
-color:var(--ink);
-}
-
-.nav-links a:hover{
-background:rgba(196,168,130,0.12);
-color:var(--ink);
-transform:translateY(-1px);
-}
-
-#hero{
-min-height:100vh;
-display:grid;
-grid-template-columns:1.1fr .9fr;
-align-items:center;
-gap:90px;
-padding:0 60px;
-max-width:1280px;
-margin:auto;
-position:relative;
-}
-
-.hero-content{
-max-width:680px;
-}
-
-.hero-tag,.section-label{
-font-size:.75rem;
-letter-spacing:.2em;
-text-transform:uppercase;
-color:var(--accent-dark);
-margin-bottom:20px;
-}
-
-h1,h2,h3{
-font-family:'Cormorant Garamond',serif;
-font-weight:300;
-line-height:1;
-}
-
-h1{font-size:clamp(3.4rem,8vw,6.4rem)}
-h2{font-size:clamp(2.4rem,4.4vw,3.8rem);margin-bottom:40px}
-h3{font-size:1.8rem;margin-bottom:12px}
-
-.hero-subtitle{
-margin-top:24px;
-max-width:760px;
-font-size:clamp(1.4rem,2.8vw,2.2rem);
-line-height:1.2;
-font-family:'Cormorant Garamond',serif;
-font-weight:300;
-color:var(--ink);
-}
-
-.hero-desc{
-margin-top:24px;
-max-width:540px;
-color:var(--ink-soft);
-font-size:1.05rem;
-line-height:1.8;
-}
-
-.hero-actions{display:flex;align-items:center;gap:24px;margin-top:38px;flex-wrap:wrap}
-.hero-visual{
-position:relative;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.hero-visual::before{
-content:"";
-position:absolute;
-width:420px;
-height:420px;
-background:radial-gradient(circle, rgba(196,168,130,0.24) 0%, rgba(196,168,130,0) 70%);
-filter:blur(10px);
-z-index:0;
-}
-
-.hero-visual img{
-position:relative;
-width:100%;
-max-width:520px;
-border-radius:18px;
-box-shadow:
-0 40px 80px rgba(0,0,0,0.12),
-0 0 0 1px rgba(255,255,255,0.5);
-z-index:1;
-}
-.hero-cta,.linkedin-btn{
-display:inline-block;
-text-decoration:none;
-font-size:.8rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-border-bottom:1px solid var(--ink);
-padding-bottom:6px;
-color:var(--ink);
-transition:.25s;
-}
-.linkedin-btn{border-color:var(--ink-soft);color:var(--ink-soft)}
-.hero-cta:hover,.linkedin-btn:hover{color:var(--accent-dark);border-color:var(--accent-dark)}
-
-section{padding:100px 60px}
-
-.projects{
-display:flex;
-flex-direction:column;
-gap:30px;
-}
-
-.project-card{
-display:grid;
-grid-template-columns:320px 1fr 52px;
-gap:72px;
-align-items:center;
-padding:42px 48px;
-background:var(--card-bg);
-border:1px solid var(--border);
-text-decoration:none;
-color:inherit;
-position:relative;
-overflow:hidden;
-min-height:230px;
-transition:
-transform .45s cubic-bezier(.22,1,.36,1),
-box-shadow .45s cubic-bezier(.22,1,.36,1),
-border-color .3s ease,
-background .3s ease;
-}
-
-.project-card::before{
-content:"";
-position:absolute;
-inset:18px;
-border:1px solid rgba(196,168,130,0.18);
-pointer-events:none;
-opacity:.65;
-}
-
-.project-card > *{
-position:relative;
-z-index:1;
-}
-
-.project-card img{
-width:100%;
-height:170px;
-object-fit:cover;
-object-position:center;
-border-radius:10px;
-background:#eee;
-box-shadow:
-0 20px 50px rgba(0,0,0,0.10),
-0 0 0 1px rgba(255,255,255,0.55);
-transition:transform .55s cubic-bezier(.22,1,.36,1);
-}
-
-.project-title{
-font-family:'Cormorant Garamond',serif;
-font-size:2.15rem;
-margin-bottom:12px;
-line-height:1.05;
-}
-
-.project-desc{
-font-size:1rem;
-color:var(--ink-soft);
-max-width:780px;
-line-height:1.7;
-}
-
-.project-meta{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-top:18px;
-}
-
-.badge{
-padding:7px 12px;
-font-size:.66rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-color:var(--accent-dark);
-background:rgba(196,168,130,0.10);
-border:1px solid rgba(196,168,130,0.18);
-border-radius:999px;
-}
-
-.project-arrow{
-font-size:2rem;
-color:var(--accent-dark);
-justify-self:end;
-}
-
-.project-card:hover{
-transform:translateY(-8px);
-box-shadow:
-0 24px 50px rgba(26,25,23,0.10),
-0 0 0 1px rgba(196,168,130,0.18);
-border-color:rgba(196,168,130,0.45);
-}
-
-.project-card:hover img{
-transform:scale(1.025);
-}
-
-/* Main featured project */
-.featured-project{
-grid-template-columns:320px 1fr 52px;
-gap:72px;
-padding:42px 48px;
-background:
-radial-gradient(circle at 18% 45%, rgba(196,168,130,0.18), transparent 32%),
-linear-gradient(135deg, #FDFCFA 0%, #F8F2E8 100%);
-border:1px solid var(--accent);
-box-shadow:0 24px 70px rgba(26,25,23,0.08);
-}
-
-.featured-project::before{
-border-color:rgba(196,168,130,0.30);
-}
-
-.featured-project img{
-height:190px;
-}
-
-.featured-project .project-title{
-font-size:2.35rem;
-}
-
-.featured-project .project-desc{
-font-size:1.02rem;
-}
-
-.about-grid{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:120px;
-align-items:start;
-max-width:1200px;
-}
-
-.about-copy{
-max-width:720px;
-color:var(--ink-soft);
-font-size:1rem;
-}
-
-.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.skill{border:1px solid var(--border);padding:7px 12px;font-size:.75rem;background:var(--card-bg)}
-
-.value-card{background:var(--card-bg);border:1px solid var(--border);padding:28px}
-.value-card ul{padding-left:18px;color:var(--ink-soft);font-size:.92rem}
-.value-card li+li{margin-top:10px}
-
-#contact{
-text-align:center;
-padding:120px 60px 140px;
-border-top:1px solid var(--border);
-}
-
-#contact h2{
-max-width:900px;
-margin:0 auto 28px;
-}
-
-.contact-btn{
-display:inline-block;
-margin-top:40px;
-padding:14px 36px;
-background:var(--ink);
-color:white;
-text-decoration:none;
-letter-spacing:.12em;
-font-size:.8rem;
-text-transform:uppercase;
-transition:.25s;
-}
-
-.contact-btn:hover{
-background:var(--accent-dark);
-}
-
-.contact-linkedin{
-display:inline-block;
-margin-top:18px;
-text-decoration:none;
-font-size:.8rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-color:var(--accent-dark);
-border-bottom:1px solid var(--accent-dark);
-padding-bottom:6px;
-}
-
-footer{padding:40px 60px;border-top:1px solid var(--border);font-size:.75rem;color:var(--ink-faint);text-align:center}
-.footer-linkedin{text-decoration:none;color:var(--ink-soft);font-size:.75rem;letter-spacing:.1em}
-.footer-linkedin:hover{color:var(--ink)}
-
-.hero-content,.hero-visual{opacity:0;transform:translateY(20px);animation:fadeUp .8s ease forwards}
-
-.hero-content{animation-delay:.12s}
-.hero-visual{animation-delay:.28s}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(30px);transition:all .8s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-
-.project-card img{
-transition:transform .55s cubic-bezier(.22,1,.36,1);
-}
-
-.project-card:hover img{
-transform:scale(1.025);
-}
-
-a:focus-visible{
-outline:2px solid var(--accent);
-outline-offset:4px;
-border-radius:999px;
-}
-
-body{
-animation:pageFadeIn .55s ease forwards;
-}
-
-@keyframes pageFadeIn{
-from{
-opacity:0;
-}
-to{
-opacity:1;
-}
-}
-
-body.page-exit{
-opacity:0;
-transition:opacity .28s ease;
-}
-
-
-@media (prefers-reduced-motion: reduce){
-*{
-animation:none!important;
-transition:none!important;
-scroll-behavior:auto!important;
-}
-}
-
-@media(max-width:900px){
-nav{
-right:20px;
-top:20px;
-padding:10px 14px;
-}
-
-.nav-links{
-gap:8px;
-}
-
-section{padding:80px 20px}#hero{padding:0 20px}
-.project-card,
-.featured-project{
-grid-template-columns:1fr;
-padding:28px;
-gap:24px;
-}
-
-.project-card::before,
-.featured-project::before{
-inset:12px;
-}
-
-.project-card img,
-.featured-project img{
-width:100%;
-height:220px;
-transform:none;
-}
-
-.project-arrow{
-display:none;
-}
-
-.featured-project::before{
-inset:12px;
-}
-#hero{
-grid-template-columns:1fr;
-gap:40px;
-padding-top:120px;
-padding-bottom:80px;
-}
-
-.hero-visual{
-order:-1;
-}
-
-.hero-visual img{
-max-width:100%;
-}
-
-}
-</style>
 </head>
 
 <body>
@@ -518,6 +43,7 @@ max-width:100%;
 </ul>
 </nav>
 
+<main>
 <section id="hero">
   <div class="hero-content">
     <div class="hero-tag">UX/UI Designer · Product Design · Fintech</div>
@@ -539,7 +65,7 @@ max-width:100%;
   </div>
 
   <div class="hero-visual">
-    <img src="images/fintech-project.png" alt="Fintech UI preview">
+    <img src="images/fintech-project.webp" alt="Fintech UI preview">
   </div>
 </section>
 
@@ -550,7 +76,7 @@ max-width:100%;
 <div class="projects">
 
 <a class="project-card featured-project" href="project-fintech.html">
-<img src="images/fintech-project.png" alt="Fintech app case study preview" loading="lazy">
+<img src="images/fintech-project.webp" alt="Fintech app case study preview" loading="lazy">
 <div>
 <div class="project-title">Fintech app for clearer spending decisions</div>
 <p class="project-desc">Designed a mobile finance product for people with variable income, focused on helping users understand what is safe to spend today instead of relying only on bank balance.</p>
@@ -562,7 +88,7 @@ max-width:100%;
 </a>
 
 <a class="project-card" href="project-research.html">
-<img src="images/research-project.jpg" alt="UX research case study preview" loading="lazy">
+<img src="images/research-project.webp" alt="UX research case study preview" loading="lazy">
 <div>
 <div class="project-title">Understanding user decision-making in digital products</div>
 <p class="project-desc">Conducted user interviews and built a structured research brief to identify user pain points, behavioral patterns, and opportunities for clearer product decisions.</p>
@@ -574,7 +100,7 @@ max-width:100%;
 </a>
 
 <a class="project-card" href="project-wireframe.html">
-<img src="images/wireframe-project.jpg" alt="Wireframe and prototype design preview" loading="lazy">
+<img src="images/wireframe-project.webp" alt="Wireframe and prototype design preview" loading="lazy">
 <div>
 <div class="project-title">Designing intuitive flows that reduce user friction</div>
 <p class="project-desc">Designed user flows and iterative wireframes, moving from low-fidelity sketches to interactive prototypes that make the experience easier to understand and test.</p>
@@ -586,7 +112,7 @@ max-width:100%;
 </a>
 
 <a class="project-card" href="project-design-system.html">
-<img src="images/design-system.jpg" alt="Atomic design system project preview" loading="lazy">
+<img src="images/design-system.webp" alt="Atomic design system project preview" loading="lazy">
 <div>
 <div class="project-title">Building scalable design systems for consistency and speed</div>
 <p class="project-desc">Created a scalable component system based on Atomic Design principles to improve consistency, reusability, and efficiency across interfaces.</p>
@@ -652,6 +178,7 @@ Open to UX/UI design opportunities, collaborations, and freelance projects.
 <br><br>
 <a class="contact-linkedin" href="https://linkedin.com/in/miguel-goribar" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
 </section>
+</main>
 
 <footer>
 © 2026 Miguel Goribar — UX/UI Designer
@@ -695,29 +222,32 @@ document.querySelectorAll("a").forEach(link=>{
   }
 });
 </script>
+
 <script>
 const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinks = document.querySelectorAll(".nav-links a");
 
-window.addEventListener("scroll", () => {
-  let current = "";
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.getAttribute("id");
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
+      navLinks.forEach(link => {
+        link.classList.remove("active");
 
-    if(scrollY >= sectionTop){
-      current = section.getAttribute("id");
+        if(link.getAttribute("href") === `#${id}`){
+          link.classList.add("active");
+        }
+      });
     }
   });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-
-    if(link.getAttribute("href") === `#${current}`){
-      link.classList.add("active");
-    }
-  });
+},{
+  rootMargin:"-40% 0px -50% 0px",
+  threshold:0
 });
+
+sections.forEach(section => navObserver.observe(section));
 </script>
+
 </body>
 </html>

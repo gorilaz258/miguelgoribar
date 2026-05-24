@@ -16,555 +16,27 @@
 <meta name="twitter:description" content="Research-driven UX/UI portfolio focused on usability and digital products." />
 <meta name="twitter:image" content="preview.png" />
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
-:root{
---bg:#F7F5F2;
---ink:#1A1917;
---ink-soft:#6B6860;
---accent:#C4A882;
---accent-dark:#9E7E5C;
---border:#E4E1DC;
---card-bg:#FDFCFA;
-}
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+rel="stylesheet">
 
-html{scroll-behavior:smooth}
+<link rel="stylesheet" href="css/style.css">
 
-body{
-background:var(--bg);
-color:var(--ink);
-font-family:'DM Sans',sans-serif;
-line-height:1.7;
-}
-
-nav{
-position:fixed;
-top:28px;
-right:40px;
-padding:10px 14px;
-background:rgba(255,255,255,0.62);
-backdrop-filter:blur(18px);
-border:1px solid rgba(196,168,130,0.18);
-border-radius:999px;
-box-shadow:0 10px 30px rgba(0,0,0,0.04);
-z-index:1000;
-transition:
-background .3s ease,
-box-shadow .3s ease,
-transform .3s ease;
-}
-
-nav:hover{
-box-shadow:0 14px 40px rgba(0,0,0,0.06);
-}
-
-nav a{
-text-decoration:none;
-color:var(--ink-soft);
-font-size:.72rem;
-letter-spacing:.14em;
-text-transform:uppercase;
-padding:10px 16px;
-border-radius:999px;
-transition:
-background .25s ease,
-color .25s ease,
-transform .25s ease;
-}
-
-nav a:hover{
-background:rgba(196,168,130,0.12);
-color:var(--ink);
-transform:translateY(-1px);
-}
-
-main{
-max-width:1180px;
-margin:auto;
-padding:140px 60px 100px;
-}
-
-.project-hero{
-display:grid;
-grid-template-columns:1.05fr .95fr;
-gap:70px;
-align-items:center;
-min-height:78vh;
-}
-
-.label{
-font-size:.75rem;
-letter-spacing:.2em;
-text-transform:uppercase;
-color:var(--accent-dark);
-margin-bottom:22px;
-}
-
-h1,h2,h3{
-font-family:'Cormorant Garamond',serif;
-font-weight:300;
-line-height:1;
-}
-
-h1{
-font-size:clamp(3rem,7vw,6rem);
-margin-bottom:28px;
-}
-
-h2{
-font-size:clamp(2.2rem,4vw,3.4rem);
-margin-bottom:28px;
-}
-
-h3{
-font-size:1.7rem;
-margin-bottom:12px;
-}
-
-.lead{
-font-size:1.1rem;
-color:var(--ink-soft);
-max-width:620px;
-}
-
-.hero-img{
-width:100%;
-border-radius:24px;
-box-shadow:
-0 40px 100px rgba(0,0,0,.16),
-0 0 0 1px rgba(255,255,255,.45);
-transform:perspective(1200px) rotateY(-4deg) rotateX(1deg);
-transition:transform .6s ease;
-}
-
-.hero-img:hover{
-transform:perspective(1200px) rotateY(0deg) rotateX(0deg);
-}
-
-.meta-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-margin:70px 0;
-}
-
-.meta-card,.content-card{
-background:var(--card-bg);
-border:1px solid var(--border);
-padding:26px;
-}
-
-.meta-card span{
-display:block;
-font-size:.7rem;
-letter-spacing:.14em;
-text-transform:uppercase;
-color:var(--accent-dark);
-margin-bottom:8px;
-}
-
-.meta-card strong{
-font-size:.95rem;
-font-weight:500;
-}
-
-.section{
-padding:70px 0;
-border-top:1px solid var(--border);
-}
-
-.two-col{
-display:grid;
-grid-template-columns:.8fr 1.2fr;
-gap:60px;
-}
-
-p{
-color:var(--ink-soft);
-max-width:760px;
-}
-
-ul{
-padding-left:18px;
-color:var(--ink-soft);
-}
-
-li+li{margin-top:12px}
-
-.metrics{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-margin-top:30px;
-}
-
-.metric{
-background:
-linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,255,255,.92));
-border:1px solid rgba(196,168,130,.18);
-padding:38px 34px;
-border-radius:18px;
-box-shadow:0 18px 40px rgba(0,0,0,.06);
-backdrop-filter:blur(12px);
-}
-
-.metric{
-transition:
-transform .45s cubic-bezier(.22,1,.36,1),
-box-shadow .45s cubic-bezier(.22,1,.36,1),
-border-color .35s ease;
-}
-
-.metric:hover{
-transform:translateY(-6px);
-box-shadow:0 24px 60px rgba(26,25,23,.10);
-border-color:rgba(196,168,130,.45);
-}
-
-.metric strong{
-margin-bottom:12px;
-display:block;
-font-family:'Cormorant Garamond',serif;
-font-size:3rem;
-line-height:1;
-color:var(--ink);
-}
-
-.metric span{
-font-size:.75rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-color:var(--ink-soft);
-}
-
-.back-link{
-display:inline-block;
-margin-top:80px;
-color:var(--ink);
-text-decoration:none;
-border-bottom:1px solid var(--ink);
-font-size:.8rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-}
-
-.process-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-margin-top:34px;
-}
-
-.process-card{
-background:var(--card-bg);
-border:1px solid var(--border);
-padding:28px;
-border-radius:18px;
-box-shadow:0 18px 40px rgba(0,0,0,.05);
-}
-
-.process-card{
-transition:
-transform .45s cubic-bezier(.22,1,.36,1),
-box-shadow .45s cubic-bezier(.22,1,.36,1),
-border-color .35s ease;
-}
-
-.process-card:hover{
-transform:translateY(-6px);
-box-shadow:0 24px 60px rgba(26,25,23,.10);
-border-color:rgba(196,168,130,.45);
-}
-
-.process-card span{
-display:block;
-font-size:.72rem;
-letter-spacing:.16em;
-text-transform:uppercase;
-color:var(--accent-dark);
-margin-bottom:18px;
-}
-
-.process-card h3{
-font-size:1.55rem;
-}
-
-.process-card p{
-font-size:.92rem;
-}
-
-.highlights-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:28px;
-margin-top:42px;
-}
-
-.highlight-card{
-background:var(--card-bg);
-border:1px solid var(--border);
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.06);
-transition:
-transform .45s ease,
-box-shadow .45s ease;
-}
-
-.highlight-card:hover{
-transform:translateY(-8px);
-box-shadow:0 30px 70px rgba(0,0,0,.10);
-}
-
-.highlight-card img{
-width:100%;
-height:280px;
-object-fit:cover;
-display:block;
-}
-
-.highlight-content{
-padding:30px;
-}
-
-.highlight-content h3{
-margin-bottom:14px;
-}
-
-.highlight-content p{
-font-size:.95rem;
-}
-
-.quote-section{
-padding:120px 0;
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-max-width:980px;
-margin:auto;
-}
-
-.quote-line{
-width:80px;
-height:1px;
-background:var(--accent);
-margin-bottom:42px;
-opacity:.5;
-}
-
-blockquote{
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(2.4rem,5vw,4.6rem);
-line-height:1.08;
-font-weight:300;
-max-width:900px;
-color:var(--ink);
-letter-spacing:-.02em;
-}
-
-.quote-caption{
-margin-top:34px;
-font-size:.78rem;
-letter-spacing:.18em;
-text-transform:uppercase;
-color:var(--ink-soft);
-}
-
-.evolution-grid{
-display:grid;
-grid-template-columns:1fr 80px 1fr;
-gap:24px;
-align-items:center;
-margin-top:50px;
-}
-
-.evolution-card{
-background:var(--card-bg);
-border:1px solid var(--border);
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 20px 50px rgba(0,0,0,.06);
-}
-
-.evolution-card{
-transition:
-transform .45s cubic-bezier(.22,1,.36,1),
-box-shadow .45s cubic-bezier(.22,1,.36,1),
-border-color .35s ease;
-}
-
-.evolution-card:hover{
-transform:translateY(-6px);
-box-shadow:0 24px 60px rgba(26,25,23,.10);
-border-color:rgba(196,168,130,.45);
-}
-
-.evolution-card img{
-width:100%;
-height:340px;
-object-fit:cover;
-display:block;
-}
-
-.evolution-content{
-padding:30px;
-}
-
-.evolution-content span{
-display:block;
-font-size:.72rem;
-letter-spacing:.16em;
-text-transform:uppercase;
-color:var(--accent-dark);
-margin-bottom:16px;
-}
-
-.evolution-content p{
-font-size:.95rem;
-}
-
-.evolution-arrow{
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:2.5rem;
-color:var(--accent-dark);
-opacity:.6;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-section{
-opacity:0;
-transform:translateY(20px);
-animation:fadeUp .8s ease forwards;
-}
-
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.final-cta{
-margin-top:90px;
-padding:80px;
-background:linear-gradient(135deg, #FDFCFA, #F8F2E8);
-border:1px solid var(--border);
-border-radius:28px;
-text-align:center;
-box-shadow:0 24px 70px rgba(0,0,0,.08);
-}
-
-.final-cta h2{
-max-width:760px;
-margin-left:auto;
-margin-right:auto;
-}
-
-.final-cta p{
-margin:0 auto;
-}
-
-.cta-actions{
-display:flex;
-justify-content:center;
-gap:22px;
-margin-top:38px;
-flex-wrap:wrap;
-}
-
-.cta-actions a{
-text-decoration:none;
-color:var(--ink);
-font-size:.78rem;
-letter-spacing:.12em;
-text-transform:uppercase;
-border-bottom:1px solid var(--ink);
-padding-bottom:6px;
-}
-
-.cta-actions a:hover{
-color:var(--accent-dark);
-border-color:var(--accent-dark);
-}
-
-a:focus-visible{
-outline:2px solid var(--accent);
-outline-offset:4px;
-border-radius:999px;
-}
-
-body{
-animation:pageFadeIn .55s ease forwards;
-}
-
-@keyframes pageFadeIn{
-from{
-opacity:0;
-}
-to{
-opacity:1;
-}
-}
-
-body.page-exit{
-opacity:0;
-transition:
-opacity .28s ease,
-}
-
-
-@media (prefers-reduced-motion: reduce){
-*{
-animation:none!important;
-transition:none!important;
-scroll-behavior:auto!important;
-}
-}
-
-@media(max-width:900px){
-nav{right:20px;top:20px}
-main{padding:120px 20px 80px}
-.project-hero,.two-col,.meta-grid,.metrics{
-grid-template-columns:1fr;
-}
-
-.process-grid{
-grid-template-columns:1fr;
-}
-.highlights-grid{
-grid-template-columns:1fr;
-}
-.evolution-grid{
-grid-template-columns:1fr;
-}
-
-.evolution-arrow{
-transform:rotate(90deg);
-padding:10px 0;
-}
-.final-cta{
-padding:44px 24px;
-}
-}
-
-</style>
 </head>
 
-<body>
+<body class="fintech-page">
 
 <nav>
-<a href="index.html">Home</a>
 <a href="index.html#work">Work</a>
+<a href="index.html#about">About</a>
 <a href="index.html#contact">Contact</a>
+
 </nav>
 
 <main>
@@ -578,9 +50,54 @@ A mobile finance experience designed to help users understand what money is trul
 </p>
 </div>
 
-<img class="hero-img" src="images/fintech-project.png" alt="Fintech app screens">
+<img class="hero-img" src="images/fintech-project.webp" alt="Fintech app screens">
 </section>
 
+<section class="resource-section">
+
+  <div class="resource-label">Project Resources</div>
+
+  <div class="resource-grid">
+
+    <a class="resource-card" href="https://www.figma.com/proto/Nd40v1Bpzox0NoLNABODNn/Proyecto-final-Miguel-Goribar?node-id=75-1810&p=f&t=7kFSJWt39inq85XB-0&scaling=scale-down&content-scaling=fixed&page-id=1%3A15&starting-point-node-id=75%3A2250" target="_blank" rel="noopener noreferrer">
+      <span>Prototype</span>
+      <h3>Interactive Figma prototype</h3>
+      <p>Explore the final mobile experience and main navigation flow.</p>
+    </a>
+
+    <a class="resource-card" href="https://app.maze.co/report/Proyecto-Final/k07mnnj084w/intro" target="_blank" rel="noopener noreferrer">
+      <span>Validation</span>
+      <h3>Maze usability testing</h3>
+      <p>Review test results, user paths, comprehension metrics, and key findings.</p>
+    </a>
+
+    <a class="resource-card" href="Proyecto%20Final%20Miguel%20Goribar.pdf" target="_blank" rel="noopener noreferrer">
+      <span>Case Study</span>
+      <h3>Full project presentation</h3>
+      <p>View the complete PDF documentation, from problem to validation and final outcome.</p>
+    </a>
+
+    <a class="resource-card" href="https://www.figma.com/board/PpEbOTbto4WEnMNJA68JMK/User-persona-y-User-Journey-Proyecto-Final?node-id=0-1&p=f&t=Km8qlJY2iue5wKAA-0" target="_blank" rel="noopener noreferrer">
+      <span>Research</span>
+      <h3>User persona & journey board</h3>
+      <p>Explore the user persona, journey map, product map, and user flow.</p>
+    </a>
+
+    <a class="resource-card" href="https://www.figma.com/deck/n0kOrz50vXzGKrp0L5ruqc/Brief-de-Investigacion-Proyecto-final?node-id=1-266" target="_blank" rel="noopener noreferrer">
+      <span>Research Brief</span>
+      <h3>Investigation deck</h3>
+      <p>Review the research brief and early UX documentation that guided the product direction.</p>
+    </a>
+
+    <a class="resource-card" href="https://www.figma.com/design/Nd40v1Bpzox0NoLNABODNn/Proyecto-final-Miguel-Goribar?node-id=1-14&p=f&t=BilX982zQqzArK8P-0" target="_blank" rel="noopener noreferrer">
+      <span>UI Kit</span>
+      <h3>Design system & UI kit</h3>
+      <p>See the visual system, components, color palette, typography, and interface foundations.</p>
+    </a>
+
+  </div>
+
+</section>
 <section class="meta-grid">
 <div class="meta-card"><span>Role</span><strong>UX/UI Designer</strong></div>
 <div class="meta-card"><span>Focus</span><strong>Fintech Mobile App</strong></div>
@@ -600,28 +117,26 @@ The product was designed for people with variable income who need a simpler way 
 </div>
 </section>
 
-<section class="section two-col">
-<div>
-<div class="label">Problem</div>
-<h2>The balance was visible, but the decision was unclear</h2>
-</div>
-<div>
-<p>
-Users could see how much money they had, but they still struggled to understand what amount was available after considering upcoming expenses, financial commitments, and spending patterns.
-</p>
-</div>
-</section>
+<section class="section problem-section">
+  <div class="problem-grid">
+    <div>
+      <div class="label">Problem</div>
+      <h2>The balance was visible, but the decision was unclear</h2>
+    </div>
 
-<section class="quote-section">
-  <div class="quote-line"></div>
+    <div class="problem-content">
+      <p>
+        Users could see how much money they had, but they still struggled to understand what amount was available after considering upcoming expenses, financial commitments, and spending patterns.
+      </p>
 
-  <blockquote>
-    “I can see my balance, but I still don’t know if I can actually spend that money.”
-  </blockquote>
-
-  <p class="quote-caption">
-    One of the main insights identified during the research process.
-  </p>
+      <div class="problem-quote">
+        <span>Research insight</span>
+        <blockquote>
+          “I can see my balance, but I still don’t know if I can actually spend that money.”
+        </blockquote>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section two-col">
@@ -691,7 +206,7 @@ Users could see how much money they had, but they still struggled to understand 
     <div class="evolution-arrow">→</div>
 
     <div class="evolution-card">
-      <img src="images/fintech-project.png" alt="Final fintech interface">
+      <img src="images/fintech-project.webp" alt="Final fintech interface">
 
       <div class="evolution-content">
         <span>Final interface</span>
@@ -727,7 +242,7 @@ Users could see how much money they had, but they still struggled to understand 
   <div class="highlights-grid">
 
     <div class="highlight-card">
-      <img src="images/fintech-project.png" alt="Financial clarity UI">
+      <img src="images/fintech-project.webp" alt="Financial clarity UI">
       <div class="highlight-content">
         <h3>Clear spending visibility</h3>
         <p>
@@ -758,6 +273,37 @@ Users could see how much money they had, but they still struggled to understand 
 <div class="metric"><strong>89%</strong><span>Comprehension</span></div>
 <div class="metric"><strong>84%</strong><span>Decision accuracy</span></div>
 </div>
+</section>
+
+<section class="section iteration-section">
+  <div class="label">Iteration</div>
+  <h2>Improving the design after validation</h2>
+
+  <div class="iteration-grid">
+    <div class="iteration-card">
+      <span>Issue found</span>
+      <h3>“Available money” was not always understood</h3>
+      <p>
+        Some users interpreted the available amount as their total balance, creating confusion around what the number actually represented.
+      </p>
+    </div>
+
+    <div class="iteration-card">
+      <span>Design response</span>
+      <h3>Clearer microcopy and financial context</h3>
+      <p>
+        The home screen was adjusted to explain that the amount shown considers upcoming expenses and spending limits.
+      </p>
+    </div>
+
+    <div class="iteration-card">
+      <span>Expected improvement</span>
+      <h3>Faster and more confident decisions</h3>
+      <p>
+        By clarifying the meaning of the main number, users can better understand if a purchase is safe without extra mental calculation.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section class="section two-col">
